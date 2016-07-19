@@ -1,0 +1,5 @@
+
+
+a="test 'string' \"with\" a \\'lot of quote";
+b=' and "more" of \'them\'';
+print(a+b);

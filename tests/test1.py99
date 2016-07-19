@@ -1,0 +1,13 @@
+
+class MainClass{
+        @staticmethod
+def main(){
+    txt="";
+    for(i in range(0,9)){txt+=" ";}
+            txt+="Make ";
+                                                                                txt+="scripting "; txt+="great "  +"again";
+
+        print                       (txt) ;
+}
+}
+MainClass.main();

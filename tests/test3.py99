@@ -1,0 +1,40 @@
+
+class FirstClass {
+    def __init__(self)  {
+        print("FirstClass Built");    
+    }
+}
+
+class SecondClass{
+    def __init__(self){
+        print("SecondClass Built");    
+    }
+}
+
+class ThirdClass(){
+    def __init__(self){
+        print("ThirdClass Built");    
+    }
+}
+
+class FourthClass(ThirdClass){
+    def __init__(self){
+        print("FourthClass Built");    
+    }
+}
+
+
+def buildFirstclass( ){
+    FirstClass();
+}
+
+def buildSecondclass (){
+    try{
+        SecondClass () ;
+    }except(Exception){
+        print("??");
+    }
+}
+
+buildFirstclass();buildSecondclass();
+ThirdClass();FourthClass();
