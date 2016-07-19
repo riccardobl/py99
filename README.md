@@ -7,6 +7,7 @@ The generated code is plain python, thus it can be used with everything that run
 
 There is nothing fancy going on here, just a bunch of hackish regexes runned across the code, so it may fail with some python structures that i'm not aware of and potentialy with everything, but we are optimistic, aren't we?
 
+[![Build Status](https://travis-ci.org/riccardobl/py99.svg?branch=master)](https://travis-ci.org/riccardobl/py99)
 
 ##  C-like syntax?
 With that i mean:
