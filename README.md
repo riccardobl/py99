@@ -17,11 +17,15 @@ With that i mean:
 - code blocks between { }
 - round parenthesis where they should be  (i.e `for( x in range(0,10)){ }` instead of `for x in range(0,10):` )
 - Some other stuff, see the list below.
+- // for comments, instead of #
 
 For the rest it stays normal python. 
 
 
 ### Translations list
+
+`// ABC` -> `# ABC`
+
 `&&` -> `and`
 
 `||` -> `or`
@@ -49,3 +53,9 @@ For examples, see the tests/ folder.
 1. Write your script in py99
 2. Convert it in plain python with `python3 py99.py in_script.py99 out_script.py` 
 3. Use the converted script where you want. It's normal python.
+
+
+## Known issues/limitations
+- Only single line comments are supported (i.e. no `/* */`)
+- Brackets are required also for single line blocks  (i.e.  `if(x){y;}` instead of  `if(x)y;` )
+- Empty blocks are not supported (i.e. you have to use `pass` like in python: `if(x){pass;}` instead of `if(x){}`)
