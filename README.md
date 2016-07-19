@@ -17,7 +17,7 @@ With that i mean:
 - code blocks between { }
 - round parenthesis where they should be  (i.e `for( x in range(0,10)){ }` instead of `for x in range(0,10):` )
 - Some other stuff, see the list below.
-- // for comments, instead of #
+- `//` for comments, instead of `#`
 
 For the rest it stays normal python. 
 
