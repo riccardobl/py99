@@ -164,12 +164,12 @@ content=rx.sub(lambda m:m.group(1)+"except",content)
 
 def removeForBrakets(m):
     out=m.group(1)+m.group(2)+" ";
-    rx = re.compile(r'\)([\s]*:)', re.UNICODE)
+    rx = re.compile(r'\)(\s*:)', re.UNICODE)
     out+=rx.sub(lambda x:x.group(1),m.group(3))
     return out
 
 #HACK: Remove brackets from for
-rx = re.compile(r'([^A-Z0-9]|^)(for[^\s]*)\(([^:]+\:)', re.IGNORECASE|re.MULTILINE|re.UNICODE)
+rx = re.compile(r'([^A-Z0-9]|^)(for\s*)\(([^:]+\:)', re.IGNORECASE|re.MULTILINE|re.UNICODE)
 content=rx.sub(lambda m:removeForBrakets(m),content)
 
 #Add strings back
