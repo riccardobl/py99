@@ -1,4 +1,11 @@
 language: python
 python:
-  - "3.2"
+- '3.2'
 script: ./runTests.sh
+deploy:
+  provider: releases
+  api_key:
+    secure: mfBUsL4z30az8mrPnKkRiadPipflUIOexU2ZBaKS0CwY2U5gL3ifBYAYIz/EyNtWYA8j46SJvZ/PAT8weGcIjNTu/r+F9v05vgvyzsSAXNvcEW8BJVFIl//O/X8l7XTTOQXg/k9fiyUAKdO5sPjpxkrwQAzsAbqigkP7KOhrN1y0Cgk5ogaWkpw6usbHh3CG97cpq91OcZqmmjgzv/Y1oQYC18VHyRz036c0L4uzZNh3HCF4ouZctgOigONUgtZFZ0VHLDWiI9IN0mX2MRrGHanzclkBtY6Fa6Cb3k7xLdGI89Bj/7QFIXIs5b0RI977iRsdTlJoAUr4iZUB5vFUdH+Oz/sC1B4iW8VGl+/szJXV2S4F5quVYaKGAfskI4aMV8btQYjEm2uh6MmhWnpxG67NdMDSivCrRM6NUdDgrChkvvTjQBQkePhjuJ1m831fGpnX8ujZHnJF3S89xXusP/uLYYDp9o6mI6pCHEtkUGdBMuABz8AgTl4vbldwVH69J+kppbcdz5GJPqnG64NbMrNMze9CH6E4UnR3kJyN+MFoJusFtU9NNcKyavdwqw0iwrKMTkoIeeNMn23rUJDTQ8tEB5+2mb68pkMquc45q/JCJZmNp7HN6uO/5CZKIE8wdafjxVptVh2qhBoVB0zxx1Joy6SJazdiYYIojxj85QM=
+  file: py99.py
+  on:
+    tags: true
