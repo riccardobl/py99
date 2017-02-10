@@ -1,5 +1,5 @@
 
 
 a="test 'string' \"with\" a \\'lot of quote";
-b=' and "more" of \'them\'';
+b=' and "more" of \'them\' if for';
 print(a+b);

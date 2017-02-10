@@ -16,13 +16,27 @@ fout=sys.argv[2]
 content=_read_file(fin)
 
 strings=[]
-#Remove strings
+#Remove strings & comments
 
 ns_content=""
 is_string=False
+is_comment=False
 string_limiters=['"',"'"]
 binded_limiter=None
+skip_next=False
 for i,c in enumerate(content):
+    if skip_next:
+        skip_next=False
+        continue
+    if (not is_string):
+        if(c=="/" and content[i+1]=="/" and (content[i-1]!="\\" or content[i-2]=="\\")):
+            is_comment= not is_comment
+            skip_next=True
+            continue
+        elif c=="\n": 
+            is_comment=False
+        if is_comment: continue                
+    
     if ((c==string_limiters[0] or c==string_limiters[1]) if binded_limiter==None else c==binded_limiter) and (i>1 and (content[i-1]!="\\" or (i>2 and content[i-2]=="\\"))):
         if is_string:
             ns_content+="@str$"+str(len(strings)-1)+"@"
@@ -41,12 +55,12 @@ for i,c in enumerate(content):
 content=ns_content
 
 #Remove comments, we have only one type of comment that is // single line comment.
-rx = re.compile(r'\/\/.*$')
-lines=content.split("\n")
-nl=[]
-for i,l in enumerate(lines):
-    nl.append(rx.sub("",l))
-content="\n".join(nl)
+#rx = re.compile(r'\/\/.*$')
+#lines=content.split("\n")
+#nl=[]
+#for i,l in enumerate(lines):
+#    nl.append(rx.sub("",l))
+#content="\n".join(nl)
 
 
 # || -> or && -> and

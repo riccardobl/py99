@@ -21,3 +21,4 @@ runTest test2
 runTest test3
 runTest test4
 runTest test5
+runTest test6

@@ -1,0 +1,4 @@
+// Quote ' in comment
+print("aa");
+// " ''"D "'" "' ''
+print("bb //d");
